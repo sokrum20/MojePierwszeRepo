@@ -197,51 +197,27 @@ class Program
 
 
     static void DisplayBoard(char[,] board)
-
     {
-
         Console.Clear();
-
         int height = board.GetLength(0);
-
         int width = board.GetLength(1);
 
-
-
         Console.WriteLine("Plansza Saper:");
-
-        Console.Write("  ");
-
+        Console.Write("   ");
         for (int i = 0; i < width; i++)
-
-        {
-
-            Console.Write($"{i} ");
-
-        }
-
+            Console.Write($"{i,2}");
         Console.WriteLine();
-
-
+        Console.WriteLine("  +" + new string('-', width * 2) + "+");
 
         for (int i = 0; i < height; i++)
-
         {
-
-            Console.Write($"{i} ");
-
+            Console.Write($"{i,2}|");
             for (int j = 0; j < width; j++)
-
-            {
-
-                Console.Write($"{board[i, j]} ");
-
-            }
-
-            Console.WriteLine();
-
+                Console.Write($"{board[i, j],2}");
+            Console.WriteLine("|");
         }
 
+        Console.WriteLine("  +" + new string('-', width * 2) + "+");
     }
 
 
