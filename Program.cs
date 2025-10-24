@@ -71,7 +71,7 @@ class Program
 
 
 
-                        if (count == 0)
+                        if (count /*??*/ 0)
 
                         {
 
@@ -127,7 +127,7 @@ class Program
 
         char[,] board = new char[height, width];
 
-        Random random = new Random();
+        Random random = /*??*/
 
 
 
@@ -190,34 +190,58 @@ class Program
 
 
         /*??*/
-        return displayBoard;
+        displayBoard;
 
     }
 
 
 
     static void DisplayBoard(char[,] board)
+
     {
+
         Console.Clear();
+
         int height = board.GetLength(0);
+
         int width = board.GetLength(1);
 
-        Console.WriteLine("Plansza Saper:");
-        Console.Write("   ");
-        for (int i = 0; i < width; i++)
-            Console.Write($"{i,2}");
-        Console.WriteLine();
-        Console.WriteLine("  +" + new string('-', width * 2) + "+");
 
-        for (int i = 0; i < height; i++)
+
+        Console.WriteLine("Plansza Saper:");
+
+        Console.Write("  ");
+
+        for (int i = 0; i < width; i++)
+
         {
-            Console.Write($"{i,2}|");
-            for (int j = 0; j < width; j++)
-                Console.Write($"{board[i, j],2}");
-            Console.WriteLine("|");
+
+            Console.Write($"{i} ");
+
         }
 
-        Console.WriteLine("  +" + new string('-', width * 2) + "+");
+        Console.WriteLine();
+
+
+
+        for (int i = 0; i < height; i++)
+
+        {
+
+            Console.Write($"{i} ");
+
+            for (int j = 0; j < width; j++)
+
+            {
+
+                Console.Write($"{board[i, j]} ");
+
+            }
+
+            Console.WriteLine();
+
+        }
+
     }
 
 
@@ -238,7 +262,7 @@ class Program
 
         {
 
-            for (int j = Math.Max(0, x - 1); j <= Math.Min(width - 1, x + 1); j++)
+            for (int j = Math.Max(0, x - 1); j <= /*??*/(width - 1, x + 1); j++)
 
             {
 
@@ -340,7 +364,7 @@ class Program
 
 
 
-        return uncoveredCount == width *height - bombCount;
+        return uncoveredCount == /* ??*/ *height - bombCount;
 
     }
 
